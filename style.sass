@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap')
 
-
 *
     font-family: "Bebas Neue", sans-serif
-    font-weigth: 400px
+
 
 body
     position: relative
@@ -34,6 +33,9 @@ nav ul li
 nav ul li a
     text-decoration: none
     color: #ffffff
+
+.nav-links a:hover
+    border-bottom: 2px solid white
   
 #search
     padding: 10px
@@ -56,10 +58,16 @@ h2
     font-weight: bold
     font-size: 40px
     border-bottom: 1px solid black
-  
+
+.container
+    display: flex 
+
 .products
     display: flex
     flex-wrap: wrap
+    flex: 3
+    padding-left: 30px
+    overflow: scroll
   
 .product
     margin-bottom: 20px
@@ -92,8 +100,7 @@ h2
     padding: 10px 20px
     text-decoration: none
     border-radius: 5px
-    transition: background-color 0.3s ease
-  
+      
 .btn:hover
     background-color: #18b733
   
@@ -118,7 +125,7 @@ footer
     justify-content: center
   
 .feedback form
-    background-color: #ffffff
+    background-color: #c0c0c0
     padding: 20px
     border-radius: 10px
     width: 50%
@@ -157,22 +164,14 @@ footer
   
 .animated-element
     opacity: 0
-    animation: fadeIn 1s ease-in-out forwards
+    animation: smooth 1s ease-in-out forwards
   
-@keyframes fadeIn
+@keyframes smooth
     from
       opacity: 0
     to
       opacity: 1
-  
-.container
-    display: flex
-  
-.products
-    flex: 3
-    padding-left: 30px
-    overflow: scroll
-  
+    
 .sidebar
     flex: 1
     border-left: 0.5px solid #dbdbdb
@@ -188,8 +187,24 @@ h3
     color: #616161
     text-decoration: underline
   
-#menu
+nav #menu
+  display: none
+
+@media screen and (max-width: 856px)
+  nav #menu
+    display: block
+
+  .submenu 
     display: none
-  
-.nav-links a:hover
-    border-bottom: 2px solid whi
+    position: absolute
+    background-color: #3b3939
+    padding: 20px
+
+  .nav-links li:hover .submenu 
+    display: flex
+    flex-direction: column
+
+    
+
+
+ 
